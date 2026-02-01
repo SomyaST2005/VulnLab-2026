@@ -1,0 +1,20 @@
+{
+  "name": "vulnlab-backend",
+  "version": "1.0.0",
+  "description": "Backend for VulnLab-2026 – deliberately vulnerable Node.js application",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node src/server.js"
+  },
+  "author": "VulnLab Team",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.1",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.11.0"
+  }
+}
