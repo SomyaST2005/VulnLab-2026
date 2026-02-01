@@ -29,6 +29,23 @@ async function init() {
   await connection.end();
 }
 
+const seedSQL = fs.readFileSync("./seed.sql", "utf8");
+
+  const seedStatements = seedSQL
+    .split(";")
+    .map(s => s.trim())
+    .filter(Boolean);
+
+  for (const stmt of seedStatements) {
+    await connection.query(stmt);
+  }
+
+  console.log("Seed data inserted.");
+
+  await connection.end();
+  console.log("Database fully initialized.");
+}
+
 init().catch(err => {
   console.error("Initialization failed:", err.message);
   process.exit(1);
